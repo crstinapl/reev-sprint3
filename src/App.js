@@ -14,7 +14,7 @@ class App extends Component {
       repos:[],
     }
     console.log('this.state.repos', this.state);
-    this.handlelook=this.handlelook.bind(this);
+  
   }
 
   componentDidMount(){
@@ -36,7 +36,7 @@ class App extends Component {
         <input className="look"
         onChange={this.handlelook}
       />
-        <Repolist arrayrepos={this.state.repos}/>
+        <RepoList arrayrepos={this.state.repos}/>
       </div>
     );
   }

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import Repo from './Repo';
 
-class RepoList extends RepoList {
+class RepoList extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render(){
   const {arrayrepos}=this.props;
-  
+
   return(
     <div>
       <ul className="card">
