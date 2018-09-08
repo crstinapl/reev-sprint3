@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import RepoList from './RepoList';
 import Search from './Search';
 import Repo from './Repo';
+import RepoList from './RepoList';
+
+const Adalab = "https://api.github.com/orgs/Adalab/repos"
 
 class App extends Component {
   constructor(props){
@@ -16,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('https://api.github.com/orgs/Adalab/repos')
+    fetch(Adalab)
     .then((response)=>{
       return response.json();
     })
@@ -34,7 +36,7 @@ class App extends Component {
         <input className="look"
         onChange={this.handlelook}
       />
-
+        <Repolist arrayrepos={this.state.repos}/>
       </div>
     );
   }
