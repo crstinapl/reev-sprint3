@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 
 class Search extends Component {
   render(){
-  
+
     return(
       <div>
         <h1 className="title"> Repos at Adalab in GitHub</h1>
@@ -11,6 +11,11 @@ class Search extends Component {
         onChange={this.props.handlelook}
         value={this.props.inputFilter}
         />
+        <select onChange={this.props.handleselect}>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+        </select>
       </div>
     );
   }

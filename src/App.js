@@ -14,9 +14,11 @@ class App extends Component {
     this.state={
       repos:[],
       inputFilter:'',
+      selectFilter:'',
     }
     console.log('this.state.repos', this.state);
     this.handlelook=this.handlelook.bind(this);
+    this.handleselect=this.handleselect.bind(this);
 
   }
 
@@ -38,6 +40,12 @@ class App extends Component {
     )
   }
 
+  handleselect(event){
+    this.setState(
+      {selectFilter:event.target.value}
+    )
+  }
+
   render() {
 
 
@@ -47,10 +55,13 @@ class App extends Component {
           inputFilter={this.state.inputFilter}
           handlelook={this.handlelook}
           repos={this.state.repos}
+          handleselect={this.handleselect}
           />
           <RepoList arrayrepos={this.state.repos}
             inputFilter={this.state.inputFilter}
+            selectFilter={this.state.selectFilter}
           />
+
       </div>
     );
   }
