@@ -13,8 +13,10 @@ class App extends Component {
     super(props);
     this.state={
       repos:[],
+      inputFilter:'',
     }
     console.log('this.state.repos', this.state);
+    this.handlelook=this.handlelook.bind(this);
 
   }
 
@@ -30,14 +32,22 @@ class App extends Component {
     });
   }
 
+  handlelook(event){
+    this.setState(
+      {inputFilter:event.target.value}
+    )
+  }
+
   render() {
-    
+    const filter=this.state.repos.filter(web=>
+    web.name.toUpperCase().includes(this.state.inputFilter.toUpperCase()))
 
     return (
       <div className="App">
         <h1 className="title"> Repos at Adalab in GitHub</h1>
         <input className="look"
         onChange={this.handlelook}
+        value={this.state.inputFilter}
       />
         <RepoList arrayrepos={this.state.repos}/>
       </div>
