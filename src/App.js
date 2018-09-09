@@ -4,7 +4,7 @@ import './App.css';
 import Search from './Search';
 import Repo from './Repo';
 import RepoList from './RepoList';
-
+import { Route, Switch } from 'react-router-dom';
 
 
 const Adalab = "https://api.github.com/orgs/Adalab/repos"
@@ -62,7 +62,12 @@ class App extends Component {
             inputFilter={this.state.inputFilter}
             selectFilter={this.state.selectFilter}
           />
-
+      <main>
+        <Switch>
+          <Route exact path='/' render={()=>
+          <Search arrayrepos={inputFilter}/>} />
+        </Switch>
+      </main>
       </div>
     );
   }
