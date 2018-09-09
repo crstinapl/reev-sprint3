@@ -10,7 +10,7 @@ class RepoList extends Component {
   const {arrayrepos}=this.props;
   const arrayFilterInputs=arrayrepos.filter(web=>
   web.name.toUpperCase().includes(this.props.inputFilter.toUpperCase()));
-  {/* voy a llamarle arrayAllFilters pq me filtra del filtro anterior (arrayFilterInputs), sus filtros*/}
+  {/* voy a llamarle arrayAllFilters pq me filtra del filtro anterior (arrayFilterInputs), sus filtros. Es un filtro de un filtro*/}
   const arrayAllFilters=arrayFilterInputs.filter(web=>
   web.language.includes(this.props.selectFilter));
 

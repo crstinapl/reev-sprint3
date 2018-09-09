@@ -6,6 +6,7 @@ import Repo from './Repo';
 import RepoList from './RepoList';
 
 
+
 const Adalab = "https://api.github.com/orgs/Adalab/repos"
 
 class App extends Component {
@@ -56,7 +57,7 @@ class App extends Component {
           handlelook={this.handlelook}
           repos={this.state.repos}
           handleselect={this.handleselect}
-          />
+        />
           <RepoList arrayrepos={this.state.repos}
             inputFilter={this.state.inputFilter}
             selectFilter={this.state.selectFilter}
