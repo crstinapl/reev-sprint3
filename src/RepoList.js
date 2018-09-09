@@ -8,14 +8,18 @@ class RepoList extends Component {
 
   render(){
   const {arrayrepos}=this.props;
+  const filter=arrayrepos.filter(web=>
+  web.name.toUpperCase().includes(this.props.inputFilter.toUpperCase()))
+
 
   return(
     <div>
       <ul className="card">
-        {arrayrepos.map((repos, index)=>
+        {filter.map((repos, index)=>
           <li key={index}>
           <Repo
             name={repos.name}
+            language={repos.language}
             description={repos.description}
           />
           </li>

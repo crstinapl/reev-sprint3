@@ -39,17 +39,18 @@ class App extends Component {
   }
 
   render() {
-    const filter=this.state.repos.filter(web=>
-    web.name.toUpperCase().includes(this.state.inputFilter.toUpperCase()))
+
 
     return (
       <div className="App">
-        <h1 className="title"> Repos at Adalab in GitHub</h1>
-        <input className="look"
-        onChange={this.handlelook}
-        value={this.state.inputFilter}
-      />
-        <RepoList arrayrepos={this.state.repos}/>
+        <Search
+          inputFilter={this.state.inputFilter}
+          handlelook={this.handlelook}
+          repos={this.state.repos}
+          />
+          <RepoList arrayrepos={this.state.repos}
+            inputFilter={this.state.inputFilter}
+          />
       </div>
     );
   }
