@@ -4,13 +4,25 @@ import { Link } from 'react-router-dom';
 
 class RepoDetail extends Component {
   render(){
-    const{repoDetailWithId}= this.props;
+    {/*const{repoDetailWithId}= this.props;
     const matchId = this.props.params.id;
-    const matchParamsId= parseInt(matchId);
+    const matchParamsId= parseInt(matchId);*/}
+      const {name, description, language}=this.props;
+      console.log(this.props.arrayrepos);
 
   return(
     <div className="details">
-      <Link to="/"><button className="link__detail"> Repo</button> </Link>
+    <Link to='/'>Back</Link>
+
+
+        <div>
+          <h2>{name}</h2>
+          <p>{description}</p>
+          <p> ● {language}</p>
+        </div>
+
+
+    {/*
       <ul className="detail__list">
         {repoDetailWithId.map(function(item){
           if (item.id === matchParamsId){
@@ -28,7 +40,8 @@ class RepoDetail extends Component {
             )
       }
           })}
-      </ul>
+      </ul>*/}
+    repodetail
   </div>
   );
   }

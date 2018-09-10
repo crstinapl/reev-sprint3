@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './Logo-adalab.png';
-import './Footer.css';
+// import logo from './Logo-adalab.png';
+// import './Footer.css';
 
 class Footer extends Component {
 
@@ -11,7 +11,7 @@ class Footer extends Component {
                     Cristina Pérez© 2018
                 </p>
                 <a className="footer__link-img-adalab" href="">
-                    <img className="footer__img-adalab" src={logo} alt="Logo adalab" />
+                    <img className="footer__img-adalab" src="" alt="Logo adalab" />
                 </a>
             </footer>
         );

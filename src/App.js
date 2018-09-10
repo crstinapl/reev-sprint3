@@ -49,34 +49,62 @@ class App extends Component {
     )
   }
 
-  render() {
+  getRepo(id){ console.log('id del estado',this.state.repos)
+    console.log('hola',id);
+      const {arrayrepos}=this.state.repos;
+      return arrayrepos.find(repoFind =>repoFind.id === parseInt(id));
+    }
+
+
+  render() { console.log('this.state.repos', this.state.repos.length);
+    // const {arrayrepos}=this.state.repos;
+    if(this.state.repos.length===0){
+      return(
+        <div>
+          <p>Cargando</p>
+        </div>
+      )
+     } else {
 
 
     return (
       <div className="App">
+
         <Search
           inputFilter={this.state.inputFilter}
           handlelook={this.handlelook}
           repos={this.state.repos}
           handleselect={this.handleselect}
         />
-          <RepoList arrayrepos={this.state.repos}
-            inputFilter={this.state.inputFilter}
-            selectFilter={this.state.selectFilter}
-          />
+
       <main>
         <Switch>
           <Route
-          exact
-          path='/' render={(props)=>
-          <Search
-           // arrayrepos={inputFilter}
-           />} />
+            exact path='/'
+            render={()=>
+            <RepoList arrayrepos={this.state.repos}
+              inputFilter={this.state.inputFilter}
+              selectFilter={this.state.selectFilter}
+            />
+            }
+          />
+          <Route
+            exact path='/:id'
+            render={({match})=>
+            <RepoDetail
+              match={match}
+              repoRouter={this.getRepo(match.params.id)}
+
+            />
+            }
+          />
         </Switch>
       </main>
+
       </div>
     );
   }
+}
 }
 
 export default App;
