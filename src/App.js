@@ -64,8 +64,12 @@ class App extends Component {
           />
       <main>
         <Switch>
-          <Route exact path='/' render={()=>
-          <Search arrayrepos={inputFilter}/>} />
+          <Route
+          exact
+          path='/' render={(props)=>
+          <Search
+           // arrayrepos={inputFilter}
+           />} />
         </Switch>
       </main>
       </div>
