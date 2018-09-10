@@ -6,6 +6,7 @@ import Repo from './Repo';
 import RepoList from './RepoList';
 import { Route, Switch } from 'react-router-dom';
 import RepoDetail from './RepoDetail';
+import Footer from './Footer';
 
 
 const Adalab = "https://api.github.com/orgs/Adalab/repos"
