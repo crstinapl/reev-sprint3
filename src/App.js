@@ -22,6 +22,7 @@ class App extends Component {
     console.log('this.state.repos', this.state);
     this.handlelook=this.handlelook.bind(this);
     this.handleselect=this.handleselect.bind(this);
+    this.getRepo=this.getRepo.bind(this);
 
   }
 
@@ -49,10 +50,10 @@ class App extends Component {
     )
   }
 
-  getRepo(id){ console.log('id del estado',this.state.repos)
+  getRepo(id){ console.log('id del estado',this.state.repos.id)
     console.log('hola',id);
-      const {arrayrepos}=this.state.repos;
-      return arrayrepos.find(repoFind =>repoFind.id === parseInt(id));
+      // const {arrayrepos}=this.state.repos;
+      // return arrayrepos.find(repoFind =>repoFind.id === parseInt(id));
     }
 
 
