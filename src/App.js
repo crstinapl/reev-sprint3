@@ -52,8 +52,9 @@ class App extends Component {
 
   getRepo(id){ console.log('id del estado',this.state.repos.id)
     console.log('hola',id);
-      // const {arrayrepos}=this.state.repos;
-      // return arrayrepos.find(repoFind =>repoFind.id === parseInt(id));
+      const {repos}=this.state;
+      // debugger;
+      return repos.find(repoFind =>repoFind.id === parseInt(id));
     }
 
 
