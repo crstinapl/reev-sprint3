@@ -7,7 +7,7 @@ class RepoDetail extends Component {
     {/*const{repoDetailWithId}= this.props;
     const matchId = this.props.params.id;
     const matchParamsId= parseInt(matchId);*/}
-      const {name, description, language, forks}=this.props.repoRouter;
+      const {name, description, language, forks, stargazers, watchers}=this.props.repoRouter;
       console.log(this.props.repoRouter);
 
   return(
@@ -20,6 +20,8 @@ class RepoDetail extends Component {
           <p>{description}</p>
           <p> ● {language}</p>
           <p> {forks}</p>
+          <p>{stargazers}</p>
+          <p>{watchers}</p>
         </div>
 
 
