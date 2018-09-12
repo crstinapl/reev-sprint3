@@ -14,12 +14,14 @@ class RepoList extends Component {
   {/* voy a llamarle arrayAllFilters pq me filtra del filtro anterior (arrayFilterInputs), sus filtros. Es un filtro de un filtro*/}
   const arrayAllFilters=arrayFilterInputs.filter(web=>
   web.language.includes(this.props.selectFilter));
+  const arrayfilterthreetimes=arrayAllFilters.filter(web=>
+  web.stargazers_count>(this.props.inputStar));
   console.log(this.props.selectFilter);
 
   return(
     <div>
       <ul className="card">
-        {arrayAllFilters.map((repos, index)=>
+        {arrayfilterthreetimes.map((repos, index)=>
           <li key={index}>
           <Link to={`/${repos.id}`}>
           <Repo

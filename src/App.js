@@ -18,11 +18,13 @@ class App extends Component {
       repos:[],
       inputFilter:'',
       selectFilter:'',
+      inputStar:''
     }
     console.log('this.state.repos', this.state);
     this.handlelook=this.handlelook.bind(this);
     this.handleselect=this.handleselect.bind(this);
     this.getRepo=this.getRepo.bind(this);
+    this.handlestar=this.handlestar.bind(this);
 
   }
 
@@ -36,6 +38,12 @@ class App extends Component {
         repos:json
       });
     });
+  }
+
+  handlestar(event){
+    this.setState(
+      {inputStar:event.target.value}
+    )
   }
 
   handlelook(event){
@@ -77,6 +85,8 @@ class App extends Component {
           handlelook={this.handlelook}
           repos={this.state.repos}
           handleselect={this.handleselect}
+          handlestar={this.handlestar}
+
         />
 
       <main>
@@ -87,6 +97,7 @@ class App extends Component {
             <RepoList arrayrepos={this.state.repos}
               inputFilter={this.state.inputFilter}
               selectFilter={this.state.selectFilter}
+              inputStar={this.state.inputStar}
             />
             }
           />

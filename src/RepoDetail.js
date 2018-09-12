@@ -7,7 +7,7 @@ class RepoDetail extends Component {
     {/*const{repoDetailWithId}= this.props;
     const matchId = this.props.params.id;
     const matchParamsId= parseInt(matchId);*/}
-      const {name, description, language, forks, stargazers, watchers}=this.props.repoRouter;
+      const {name, description, language, forks, stargazers_count, watchers}=this.props.repoRouter;
       console.log(this.props.repoRouter);
 
   return(
@@ -19,9 +19,9 @@ class RepoDetail extends Component {
           <h2>{name}</h2>
           <p>{description}</p>
           <p> ● {language}</p>
-          <p> {forks}</p>
-          <p>{stargazers}</p>
-          <p>{watchers}</p>
+          <p>Forks: {forks}</p>
+          <p>Estrellas: {stargazers_count}</p>
+          <p>Observadores: {watchers}</p>
         </div>
 
 
@@ -43,8 +43,8 @@ class RepoDetail extends Component {
             )
       }
           })}
-      </ul>*/}
-    repodetail
+      </ul>
+    repodetail*/}
   </div>
   );
   }

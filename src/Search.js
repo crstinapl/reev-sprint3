@@ -11,6 +11,10 @@ class Search extends Component {
         onChange={this.props.handlelook}
         value={this.props.inputFilter}
         />
+        <input className="star"
+        onChange={this.props.handlestar}
+        
+        />
         <select onChange={this.props.handleselect}>
           <option value="">Todos los lenguajes</option>
           <option value="HTML">HTML</option>
